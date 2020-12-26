@@ -7,15 +7,15 @@ function playSound(e) {
   audio.play();
 
   key.classList.add('playing');
-};
+}
 
 function removeTransition(e) {
   if (e.propertyName !== 'transform') return;
 
   this.classList.remove('playing');
-};
+}
 
 const keys = document.querySelectorAll('.key');
 
-keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+keys.forEach((key) => key.addEventListener('transitionend', removeTransition));
 window.addEventListener('keydown', playSound);
